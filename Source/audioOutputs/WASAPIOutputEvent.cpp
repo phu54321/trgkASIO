@@ -264,7 +264,7 @@ DWORD WINAPI WASAPIOutputEvent::playThread(LPVOID pThis) {
 
     IAudioRenderClient *pRenderClient_ = nullptr;
     hr = pAudioClient->GetService(
-            IID_IAudioRenderClient,
+            __uuidof(IAudioRenderClient),
             (void **) &pRenderClient_);
     if (FAILED(hr))
         return -1;

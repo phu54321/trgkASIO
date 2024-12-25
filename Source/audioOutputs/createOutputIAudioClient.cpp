@@ -57,7 +57,7 @@ static std::shared_ptr<IAudioClient> createOutputIAudioClient(
     auto deviceFriendlyName = getDeviceFriendlyName(pDevice);
 
     IAudioClient *pAudioClient_ = nullptr;
-    hr = pDevice->Activate(IID_IAudioClient, CLSCTX_ALL, nullptr, (void **) &pAudioClient_);
+    hr = pDevice->Activate(__uuidof(IAudioClient), CLSCTX_ALL, nullptr, (void **) &pAudioClient_);
     if (FAILED(hr) || !pAudioClient_) {
         mainlog->error(L"{} pAudioClient->Activate failed: 0x{:08X}", deviceId, (uint32_t) hr);
         return nullptr;
@@ -122,7 +122,7 @@ static std::shared_ptr<IAudioClient> createOutputIAudioClient(
                        alignedBufferDuration);
 
         pAudioClient = nullptr;
-        hr = pDevice->Activate(IID_IAudioClient, CLSCTX_ALL, nullptr, (void **) &pAudioClient_);
+        hr = pDevice->Activate(__uuidof(IAudioClient), CLSCTX_ALL, nullptr, (void **) &pAudioClient_);
         if (FAILED(hr) || !pAudioClient_) {
             mainlog->error(L"{} pAudioClient->Activate failed: 0x{:08X}", deviceId, (uint32_t) hr);
             return nullptr;

@@ -73,7 +73,6 @@ add_library(trgkASIO SHARED
         Source/audioInputs/keyboardClap/ClapRenderer.cpp
         Source/audioInputs/wasapiOutputLoopback/WASAPIOutputLoopbackSource.cpp
         Source/audioOutputs/WASAPIOutputEvent.cpp
-        Source/audioOutputs/iidConstant.cpp
         Source/audioOutputs/createOutputIAudioClient.cpp
 
         Source/res/resource.rc
@@ -104,8 +103,6 @@ if (CMAKE_SIZEOF_VOID_P EQUAL 4)
     add_executable(Configurator WIN32
             Source/res/resource.rc
             Source/pref/UserPrefGUI.cpp
-
-            Source/audioOutputs/iidConstant.cpp
 
             Source/utils/w32StringGetter.cpp
             Source/pref/UserPref.cpp

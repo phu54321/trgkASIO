@@ -148,7 +148,7 @@ static INT_PTR CALLBACK DlgPromptOutputOverrideEntry(HWND hWnd, UINT uMsg, WPARA
                     std::string durationText;
                     if (selectedDevice) {
                         IAudioClient *pAudioClient = nullptr;
-                        auto hr = selectedDevice->Activate(IID_IAudioClient, CLSCTX_ALL, nullptr,
+                        auto hr = selectedDevice->Activate(__uuidof(IAudioClient), CLSCTX_ALL, nullptr,
                                                            (void **) &pAudioClient);
                         if (FAILED(hr) || !pAudioClient) {
                             mainlog->error(L" - pAudioClient->Activate failed: 0x{:08X}", (uint32_t) hr);

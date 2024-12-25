@@ -38,7 +38,7 @@ WASAPIOutputLoopbackSource::WASAPIOutputLoopbackSource(const IMMDevicePtr &pSour
 
     IAudioClient *pAudioClient_ = nullptr;
 
-    HRESULT hr = pSourceDevice->Activate(IID_IAudioClient, CLSCTX_ALL, nullptr, (void **) &pAudioClient_);
+    HRESULT hr = pSourceDevice->Activate(__uuidof(IAudioClient), CLSCTX_ALL, nullptr, (void **) &pAudioClient_);
     if (FAILED(hr) || !pAudioClient_) {
         mainlog->error(L"{} WASAPIOutputLoopbackSource: pAudioClient->Activate failed: 0x{:08X}", _pSourceDeviceId,
                        (uint32_t) hr);
@@ -87,7 +87,7 @@ WASAPIOutputLoopbackSource::WASAPIOutputLoopbackSource(const IMMDevicePtr &pSour
     // Create capture clinet
     IAudioCaptureClient *pCaptureClient_ = nullptr;
     hr = _pAudioClient->GetService(
-            IID_IAudioCaptureClient,
+            __uuidof(IAudioCaptureClient),
             (void **) &pCaptureClient_);
     if (FAILED(hr)) {
         mainlog->error(L"{} WASAPIOutputLoopbackSource: pAudioClient->GetService failed: 0x{:08X}", _pSourceDeviceId,
