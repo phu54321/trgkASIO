@@ -27,7 +27,7 @@
 #include <thread>
 #include <atomic>
 #include "utils/AppException.h"
-#include "audioOutputs/WASAPIOutput.h"
+#include "audioOutputs/AudioOutput.h"
 #include "pref/UserPref.h"
 
 #include "asiosys.h"

@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Hyun Woo Park
+// Copyright (C) 2024 Hyunwoo Park
 //
 // This file is part of trgkASIO.
 //
@@ -13,20 +13,21 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with trgkASIO.  If not, see <http://www.gnu.org/licenses/>.
+// along with ASIO2WASAPI2.  If not, see <http://www.gnu.org/licenses/>.
+//
 
 
 #pragma once
 
-#ifndef TRGKASIO_WASAPIOUTPUT_H
-#define TRGKASIO_WASAPIOUTPUT_H
+#ifndef TRGKASIO_AUDIOOUTPUT_H
+#define TRGKASIO_AUDIOOUTPUT_H
 
 #include <vector>
 #include <memory>
 
-class WASAPIOutput {
+class AudioOutput {
 public:
-    virtual ~WASAPIOutput() = default;
+    virtual ~AudioOutput() = default;
 
     /**
      * Push samples to ring central queue. This will be printed to asio.
@@ -41,6 +42,6 @@ public:
     virtual bool started() = 0;
 };
 
-using WASAPIOutputPtr = std::shared_ptr<WASAPIOutput>;
+using WASAPIOutputPtr = std::shared_ptr<AudioOutput>;
 
-#endif //TRGKASIO_WASAPIOUTPUT_H
+#endif //TRGKASIO_AUDIOOUTPUT_H

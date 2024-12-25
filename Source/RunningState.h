@@ -29,7 +29,7 @@
 #include "MessageWindow/MessageWindow.h"
 #include "MessageWindow/KeyDownListener.h"
 #include "audioInputs/AudioSource.h"
-#include "audioOutputs/WASAPIOutputEvent.h"
+#include "audioOutputs/WASAPIOutput/WASAPIOutputEvent.h"
 #include "utils/SynchronizedClock.h"
 #include <atomic>
 #include <thread>

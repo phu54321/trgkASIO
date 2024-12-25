@@ -22,7 +22,7 @@
 #include "TrgkASIOImpl.h"
 #include "res/resource.h"
 #include "utils/json.hpp"
-#include "audioOutputs/createOutputIAudioClient.h"
+#include "audioOutputs/WASAPIOutput/createOutputIAudioClient.h"
 #include "utils/raiiUtils.h"
 #include "RunningState.h"
 #include "PreparedState.h"

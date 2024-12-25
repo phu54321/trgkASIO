@@ -24,16 +24,16 @@
 #include <mutex>
 #include <cstdlib>
 
-#include "WASAPIOutput.h"
+#include "../AudioOutput.h"
 #include "WASAPIOutputEvent.h"
 #include "createOutputIAudioClient.h"
-#include <spdlog/spdlog.h>
-#include "../utils/WASAPIUtils.h"
-#include "../utils/raiiUtils.h"
-#include "../utils/logger.h"
-#include "../utils/AppException.h"
-#include "../utils/EventPerSecondCounter.h"
-#include <tracy/Tracy.hpp>
+#include "spdlog/spdlog.h"
+#include "../../utils/WASAPIUtils.h"
+#include "../../utils/raiiUtils.h"
+#include "../../utils/logger.h"
+#include "../../utils/AppException.h"
+#include "../../utils/EventPerSecondCounter.h"
+#include "tracy/Tracy.hpp"
 
 
 WASAPIOutputEvent::WASAPIOutputEvent(

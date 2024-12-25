@@ -72,8 +72,8 @@ add_library(trgkASIO SHARED
         Source/RunningState.cpp
         Source/audioInputs/keyboardClap/ClapRenderer.cpp
         Source/audioInputs/wasapiOutputLoopback/WASAPIOutputLoopbackSource.cpp
-        Source/audioOutputs/WASAPIOutputEvent.cpp
-        Source/audioOutputs/createOutputIAudioClient.cpp
+        Source/audioOutputs/WASAPIOutput/WASAPIOutputEvent.cpp
+        Source/audioOutputs/WASAPIOutput/createOutputIAudioClient.cpp
 
         Source/res/resource.rc
         Source/TrgkASIO.def)

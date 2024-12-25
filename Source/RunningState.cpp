@@ -37,7 +37,7 @@
 #include "audioInputs/keyboardClap/KeyboardClapSource.h"
 #include "audioInputs/wasapiOutputLoopback/WASAPIOutputLoopbackSource.h"
 
-#include "audioOutputs/WASAPIOutputEvent.h"
+#include "audioOutputs/WASAPIOutput/WASAPIOutputEvent.h"
 #include "utils/accurateTime.h"
 #include "utils/clampSample.h"
 #include <tracy/Tracy.hpp>

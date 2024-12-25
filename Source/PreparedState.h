@@ -28,7 +28,7 @@
 #include <vector>
 #include "asiosys.h"
 #include "asio.h"
-#include "audioOutputs/WASAPIOutput.h"
+#include "audioOutputs/AudioOutput.h"
 #include "utils/WASAPIUtils.h"
 #include "TrgkASIOImpl.h"
 

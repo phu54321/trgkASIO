@@ -29,13 +29,13 @@
 #include <vector>
 #include <functional>
 
-#include "WASAPIOutput.h"
-#include <tracy/Tracy.hpp>
-#include "../utils/RingBuffer.h"
+#include "../AudioOutput.h"
+#include "tracy/Tracy.hpp"
+#include "../../utils/RingBuffer.h"
 #include "createOutputIAudioClient.h"
-#include "../utils/SynchronizedClock.h"
+#include "../../utils/SynchronizedClock.h"
 
-class WASAPIOutputEvent : public WASAPIOutput {
+class WASAPIOutputEvent : public AudioOutput {
 public:
     WASAPIOutputEvent(
             const std::shared_ptr<IMMDevice> &pDevice,

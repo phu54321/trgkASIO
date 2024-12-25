@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Hyun Woo Park
+// Copyright (C) 2024 Hyunwoo Park
 //
 // This file is part of trgkASIO.
 //
@@ -13,18 +13,19 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with trgkASIO.  If not, see <http://www.gnu.org/licenses/>.
+// along with ASIO2WASAPI2.  If not, see <http://www.gnu.org/licenses/>.
+//
 
 
 #include "createOutputIAudioClient.h"
-#include "../utils/raiiUtils.h"
-#include "../utils/WASAPIUtils.h"
-#include <spdlog/spdlog.h>
-#include "../utils/logger.h"
+#include "../../utils/raiiUtils.h"
+#include "../../utils/WASAPIUtils.h"
+#include "spdlog/spdlog.h"
+#include "../../utils/logger.h"
 #include <mmdeviceapi.h>
 #include <Audioclient.h>
-#include <tracy/Tracy.hpp>
-#include "../pref/UserPref.h"
+#include "tracy/Tracy.hpp"
+#include "../../pref/UserPref.h"
 
 static void dumpErrorWaveFormatEx(const char *varname, const WAVEFORMATEX &pWaveFormat) {
     mainlog->error("    : {}.wFormatTag: {}", varname, pWaveFormat.wFormatTag);

@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Hyun Woo Park
+// Copyright (C) 2024 Hyunwoo Park
 //
 // This file is part of trgkASIO.
 //
@@ -13,7 +13,8 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with trgkASIO.  If not, see <http://www.gnu.org/licenses/>.
+// along with ASIO2WASAPI2.  If not, see <http://www.gnu.org/licenses/>.
+//
 
 
 #ifndef TRGKASIO_CREATEOUTPUTIAUDIOCLIENT_H
@@ -22,7 +23,7 @@
 #include <memory>
 #include <mmdeviceapi.h>
 #include <Audioclient.h>
-#include "../pref/UserPref.h"
+#include "../../pref/UserPref.h"
 
 const int BUFFER_SIZE_REQUEST_USEDEFAULT = -1;
 
