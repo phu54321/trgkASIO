@@ -76,8 +76,6 @@ private:
     HRESULT LoadData(const std::shared_ptr<IAudioRenderClient> &pRenderClient);
 
 private:
-    int _channelNum;
-    int _sampleRate;
     UINT32 _inputBufferSize;
     UINT32 _outputBufferSize;
     uint64_t _playedSampleCount;

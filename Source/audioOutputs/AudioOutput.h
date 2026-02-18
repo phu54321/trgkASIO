@@ -16,32 +16,38 @@
 // along with ASIO2WASAPI2.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-
 #pragma once
 
 #ifndef TRGKASIO_AUDIOOUTPUT_H
 #define TRGKASIO_AUDIOOUTPUT_H
 
-#include <vector>
 #include <memory>
+#include <vector>
 
 class AudioOutput {
 public:
-    virtual ~AudioOutput() = default;
+  AudioOutput(int channelNum, int sampleRate)
+      : _channelNum(channelNum), _sampleRate(sampleRate) {}
+  virtual ~AudioOutput() = default;
 
-    /**
-     * Push samples to ring central queue. This will be printed to asio.
-     * @param buffer `sample = buffer[channel][sampleIndex]`
-     */
-    virtual void pushSamples(const std::vector<std::vector<int32_t>> &buffer) = 0;
+  /**
+   * Push samples to ring central queue. This will be printed to asio.
+   * @param buffer `sample = buffer[channel][sampleIndex]`
+   */
+  virtual void pushSamples(const std::vector<std::vector<int32_t>> &buffer) = 0;
 
-    /**
-     * Check if output sink has finished initializing and is ready to accept the data.
-     * @return
-     */
-    virtual bool started() = 0;
+  /**
+   * Check if output sink has finished initializing and is ready to accept the
+   * data.
+   * @return
+   */
+  virtual bool started() = 0;
+
+protected:
+  const int _channelNum;
+  const int _sampleRate;
 };
 
 using WASAPIOutputPtr = std::shared_ptr<AudioOutput>;
 
-#endif //TRGKASIO_AUDIOOUTPUT_H
+#endif // TRGKASIO_AUDIOOUTPUT_H
